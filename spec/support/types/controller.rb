@@ -1,4 +1,6 @@
-RSpec.shared_context "controller specs", type: :controller do
+# frozen_string_literal: true
+
+RSpec.shared_context 'controller specs', type: :controller do
   render_views
 
   let(:body) { JSON.parse(response.body, symbolize_names: true) }
@@ -12,7 +14,7 @@ RSpec.shared_context "controller specs", type: :controller do
   end
 
   before do
-    request.headers["Content-Type"] = "application/vnd.api+json"
+    request.headers['content-type'] = 'application/vnd.api+json'
   end
 
   def next_id(model_class)
